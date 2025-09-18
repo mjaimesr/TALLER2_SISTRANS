@@ -112,3 +112,25 @@ INSERT INTO Tipos_Medio (id_medio, nombre) VALUES (seqIdMedio.NEXTVAL, 'OGG');
 INSERT INTO Tipos_Medio (id_medio, nombre) VALUES (seqIdMedio.NEXTVAL, 'WAV');
 
 SELECT * FROM Tipos_Medio;
+
+
+
+DROP TABLE Lista_Reproduccion;
+
+CREATE TABLE Lista_Reproduccion (
+    id_lista NUMBER PRIMARY KEY,
+    nombre   VARCHAR2(120) NOT NULL
+);
+
+CREATE SEQUENCE seqIdLista
+START WITH 1 
+INCREMENT BY 1
+NOCACHE;
+
+INSERT INTO Lista_Reproduccion (id_lista, nombre) VALUES (seqIdLista.NEXTVAL, 'Éxitos del Pop Latino');
+INSERT INTO Lista_Reproduccion (id_lista, nombre) VALUES (seqIdLista.NEXTVAL, 'Rock en Español');
+INSERT INTO Lista_Reproduccion (id_lista, nombre) VALUES (seqIdLista.NEXTVAL, 'Vallenatos Clásicos');
+INSERT INTO Lista_Reproduccion (id_lista, nombre) VALUES (seqIdLista.NEXTVAL, 'Reguetón del Momento');
+INSERT INTO Lista_Reproduccion (id_lista, nombre) VALUES (seqIdLista.NEXTVAL, 'Hits Urbanos');
+
+SELECT * FROM Lista_Reproduccion;
