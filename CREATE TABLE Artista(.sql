@@ -9,7 +9,7 @@ CREATE TABLE Artista(
 CREATE SEQUENCE seqIdArtista
 START WITH 1 
 INCREMENT BY 1
-CACHE 1 ;
+NOCACHE;
 
 INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Shakira');
 INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Juanes');
@@ -18,6 +18,7 @@ INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Jbalvin'
 INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Karol G');
 
 SELECT * FROM Artista;
+
 
 
 DROP TABLE Album
@@ -42,6 +43,7 @@ INSERT INTO Album (id_album, titulo) VALUES (seqIdAlbum.NEXTVAL, 'Tropicoqueta')
 SELECT * FROM Album;
 
 
+
 DROP TABLE Cancion
 
 CREATE TABLE Cancion(
@@ -64,6 +66,30 @@ INSERT INTO Cancion (id_cancion, nombre, compositor, milisegundos, bytes, precio
 INSERT INTO Cancion (id_cancion, nombre, compositor, milisegundos, bytes, precio_unitario) VALUES (seqIdCancion.NEXTVAL, 'Fruta fresca', 'Carlos Vives', 240000, 6000000, 10.00);
 INSERT INTO Cancion (id_cancion, nombre, compositor, milisegundos, bytes, precio_unitario) VALUES (seqIdCancion.NEXTVAL, 'Safari', 'J Balvin', 200000, 5500000, 7.99);
 INSERT INTO Cancion (id_cancion, nombre, compositor, milisegundos, bytes, precio_unitario) VALUES (seqIdCancion.NEXTVAL, 'Verano rosa', 'Karol G', 195000, 5300000, 9.50);
+
 SELECT * FROM Cancion;
+
+
+
+DROP TABLE Genero;
+
+CREATE TABLE Genero (
+    id_genero NUMBER PRIMARY KEY,
+    nombre    VARCHAR2(120) NOT NULL
+);
+
+CREATE SEQUENCE seqIdGenero
+START WITH 1 
+INCREMENT BY 1
+NOCACHE;
+
+INSERT INTO Genero (id_genero, nombre) VALUES (seqIdGenero.NEXTVAL, 'Pop');         
+INSERT INTO Genero (id_genero, nombre) VALUES (seqIdGenero.NEXTVAL, 'Rock Latino');
+INSERT INTO Genero (id_genero, nombre) VALUES (seqIdGenero.NEXTVAL, 'Vallenato');   
+INSERT INTO Genero (id_genero, nombre) VALUES (seqIdGenero.NEXTVAL, 'Reguetón');    
+INSERT INTO Genero (id_genero, nombre) VALUES (seqIdGenero.NEXTVAL, 'Urbano');   
+
+SELECT * FROM Genero;
+
 
 
