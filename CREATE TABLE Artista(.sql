@@ -93,3 +93,22 @@ SELECT * FROM Genero;
 
 
 
+DROP TABLE Tipos_Medio;
+
+CREATE TABLE Tipos_Medio (
+    id_medio NUMBER PRIMARY KEY,
+    nombre   VARCHAR2(120) NOT NULL
+);
+
+CREATE SEQUENCE seqIdMedio
+START WITH 1 
+INCREMENT BY 1
+NOCACHE;
+
+INSERT INTO Tipos_Medio (id_medio, nombre) VALUES (seqIdMedio.NEXTVAL, 'MP3');
+INSERT INTO Tipos_Medio (id_medio, nombre) VALUES (seqIdMedio.NEXTVAL, 'AAC');
+INSERT INTO Tipos_Medio (id_medio, nombre) VALUES (seqIdMedio.NEXTVAL, 'FLAC');
+INSERT INTO Tipos_Medio (id_medio, nombre) VALUES (seqIdMedio.NEXTVAL, 'OGG');
+INSERT INTO Tipos_Medio (id_medio, nombre) VALUES (seqIdMedio.NEXTVAL, 'WAV');
+
+SELECT * FROM Tipos_Medio;
