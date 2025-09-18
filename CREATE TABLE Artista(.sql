@@ -13,9 +13,9 @@ CACHE 1 ;
 
 INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Shakira');
 INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Juanes');
-INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Feid');
-INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Carlos');
-INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Maluma');
+INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Carlos Vives');
+INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Jbalvin');
+INSERT INTO Artista (id_artista, nombre) VALUES (seqIdArtista.NEXTVAL, 'Karol G');
 
 SELECT * FROM Artista;
 
@@ -35,8 +35,35 @@ NOCACHE;
 
 INSERT INTO Album (id_album, titulo) VALUES (seqIdAlbum.NEXTVAL, 'Pies Descalzos');
 INSERT INTO Album (id_album, titulo) VALUES (seqIdAlbum.NEXTVAL, 'Un Día Normal');
-INSERT INTO Album (id_album, titulo) VALUES (seqIdAlbum.NEXTVAL, 'La Tierra del Olvido');
+INSERT INTO Album (id_album, titulo) VALUES (seqIdAlbum.NEXTVAL, 'El amor de mi tierra');
 INSERT INTO Album (id_album, titulo) VALUES (seqIdAlbum.NEXTVAL, 'Energía');
-INSERT INTO Album (id_album, titulo) VALUES (seqIdAlbum.NEXTVAL, 'Fijación Oral Vol. 1');
+INSERT INTO Album (id_album, titulo) VALUES (seqIdAlbum.NEXTVAL, 'Tropicoqueta');
 
 SELECT * FROM Album;
+
+
+DROP TABLE Cancion
+
+CREATE TABLE Cancion(
+    id_cancion NUMBER PRIMARY KEY,
+    nombre VARCHAR2(200) NOT NULL,
+    compositor VARCHAR2(200) NOT NULL,
+    milisegundos NUMBER NOT NULL,
+    bytes NUMBER NOT NULL,
+    precio_unitario NUMBER(10,2) NOT NULL
+
+)
+
+CREATE SEQUENCE seqIdCancion
+START WITH 1 
+INCREMENT BY 1
+NOCACHE;
+
+INSERT INTO Cancion (id_cancion, nombre, compositor, milisegundos, bytes, precio_unitario) VALUES (seqIdCancion.NEXTVAL, 'Estoy Aquí', 'Shakira', 210000, 5120000, 9.99);
+INSERT INTO Cancion (id_cancion, nombre, compositor, milisegundos, bytes, precio_unitario) VALUES (seqIdCancion.NEXTVAL, 'A Dios le Pido', 'Juanes', 180000, 4890000, 8.50);
+INSERT INTO Cancion (id_cancion, nombre, compositor, milisegundos, bytes, precio_unitario) VALUES (seqIdCancion.NEXTVAL, 'Fruta fresca', 'Carlos Vives', 240000, 6000000, 10.00);
+INSERT INTO Cancion (id_cancion, nombre, compositor, milisegundos, bytes, precio_unitario) VALUES (seqIdCancion.NEXTVAL, 'Safari', 'J Balvin', 200000, 5500000, 7.99);
+INSERT INTO Cancion (id_cancion, nombre, compositor, milisegundos, bytes, precio_unitario) VALUES (seqIdCancion.NEXTVAL, 'Verano rosa', 'Karol G', 195000, 5300000, 9.50);
+SELECT * FROM Cancion;
+
+
